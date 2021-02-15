@@ -38,12 +38,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextEntry(
                   hint: 'Email',
+                  hide: false,
                 ),
                 SpaceBetween(
                   spacing: kSpaceBetweenFields,
                 ),
                 TextEntry(
                   hint: 'Password',
+                  hide: true,
                 ),
                 SpaceBetween(
                   spacing: kSpaceBetweenSubmission,

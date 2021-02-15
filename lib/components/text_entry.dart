@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:EmergencyStreamer/constants.dart';
 
 class TextEntry extends StatelessWidget {
-  TextEntry({this.onChange, @required this.hint});
+  TextEntry({this.onChange, @required this.hint, @required this.hide});
 
   final Function onChange;
   final String hint;
+  final bool hide;
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      keyboardType: TextInputType.emailAddress,
+      obscureText: hide,
+      textAlign: TextAlign.center,
       onChanged: onChange,
       decoration: InputDecoration(
         hintText: hint,
