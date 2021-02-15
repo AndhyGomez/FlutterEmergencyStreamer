@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608986586309",
+    "project_id": "emergencystreamer",
+    "storage_bucket": "emergencystreamer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608986586309:android:77d1bc8f67ffb1c10a24ac",
+        "android_client_info": {
+          "package_name": "com.Andhy.EmergencyStreamer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608986586309-aqn0bqu0ol7vu40643v6tr607ur9aroh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD04fcvnspEIltPRgkASIEAayTz_B4Z4Is"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608986586309-aqn0bqu0ol7vu40643v6tr607ur9aroh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

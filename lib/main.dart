@@ -5,10 +5,10 @@ import 'screens/login_screen.dart';
 import 'screens/main_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(EmergencyStreamer());
 }
 
-class MyApp extends StatelessWidget {
+class EmergencyStreamer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
