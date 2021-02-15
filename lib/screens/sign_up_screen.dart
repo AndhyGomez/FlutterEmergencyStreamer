@@ -36,6 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                // Logo,
                 Container(
                   height: 250.0,
                   child: Image.asset(
@@ -43,6 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fit: BoxFit.fitWidth,
                   ),
                 ),
+                // Email,
                 TextEntry(
                   hint: 'Your E-mail',
                   hide: false,
@@ -53,6 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SpaceBetween(
                   spacing: kSpaceBetweenFields,
                 ),
+                // Verify Email,
                 TextEntry(
                   hint: 'Verify Email',
                   hide: false,
@@ -63,6 +66,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SpaceBetween(
                   spacing: kSpaceBetweenFields,
                 ),
+                // Password,
                 TextEntry(
                   hint: 'Your Password',
                   hide: true,
@@ -73,6 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SpaceBetween(
                   spacing: kSpaceBetweenFields,
                 ),
+                // Verify Password,
                 TextEntry(
                   hint: 'Verify Password',
                   hide: true,
@@ -83,6 +88,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 SpaceBetween(
                   spacing: kSpaceBetweenSubmission,
                 ),
+                // Create Account
                 SubmissionButton(
                   onPress: () async {
                     if (inputEmail == inputEmailVerif &&
@@ -101,10 +107,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           print('Account Created');
                         }
                       } catch (e) {
-                        print(e);
+                        print('Either your Email or Password do not match');
                       }
-                    } else {
-                      print('Verification Failed.');
                     }
                   },
                   label: 'Create Account',

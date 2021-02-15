@@ -32,6 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                // Logo,
                 Container(
                   height: 250.0,
                   child: Image.asset(
@@ -42,6 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 5.0,
                 ),
+                // Email,
                 TextEntry(
                   hint: 'Email',
                   hide: false,
@@ -52,6 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SpaceBetween(
                   spacing: kSpaceBetweenFields,
                 ),
+                // Password,
                 TextEntry(
                   hint: 'Password',
                   hide: true,
@@ -62,6 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SpaceBetween(
                   spacing: kSpaceBetweenSubmission,
                 ),
+                // Log in Button,
                 SubmissionButton(
                   onPress: () async {
                     try {
@@ -78,6 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   label: 'Log In',
                 ),
+                // Register text button,
                 TextButton(
                   onPressed: () {
                     Navigator.pushNamed(context, SignUpScreen.id);
