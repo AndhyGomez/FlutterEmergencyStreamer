@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:EmergencyStreamer/constants.dart';
 
 class MainScreen extends StatefulWidget {
   static final String id = 'mainScreen';
@@ -35,6 +36,22 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: null,
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.logout,
+              color: kRedAccents,
+            ),
+            onPressed: () {
+              _auth.signOut();
+              Navigator.pop(context);
+            },
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,

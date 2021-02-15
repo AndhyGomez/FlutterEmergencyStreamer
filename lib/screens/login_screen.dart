@@ -5,6 +5,7 @@ import 'package:EmergencyStreamer/screens/main_screen.dart';
 import 'package:EmergencyStreamer/screens/sign_up_screen.dart';
 import 'package:EmergencyStreamer/components/text_entry.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   static final String id = 'loginScreen';
@@ -14,6 +15,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _auth = FirebaseAuth.instance;
+
+  String userEmail;
+  String userPass;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +45,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextEntry(
                   hint: 'Email',
                   hide: false,
+                  onChange: (value) {
+                    userEmail = value;
+                  },
                 ),
                 SpaceBetween(
                   spacing: kSpaceBetweenFields,
@@ -46,13 +55,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextEntry(
                   hint: 'Password',
                   hide: true,
+                  onChange: (value) {
+                    userPass = value;
+                  },
                 ),
                 SpaceBetween(
                   spacing: kSpaceBetweenSubmission,
                 ),
                 SubmissionButton(
-                  onPress: () {
-                    Navigator.pushNamed(context, MainScreen.id);
+                  onPress: () async {
+                    try {
+                      final user = await _auth.signInWithEmailAndPassword(
+                        email: userEmail,
+                        password: userPass,
+                      );
+                      if (user != null) {
+                        Navigator.pushNamed(context, MainScreen.id);
+                      }
+                    } catch (e) {
+                      print('Login Failed');
+                    }
                   },
                   label: 'Log In',
                 ),
