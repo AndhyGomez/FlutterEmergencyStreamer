@@ -14,3 +14,6 @@ This app was created using the Flutter framework and the Dart programming langua
 
 <img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/MainScreenInactive.png" width = 350 align = left>
 <img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/MainScreenActive.png" width = 350 align = right>
+
+## License
+This project is licensed under the STU License (Department Of Science).
