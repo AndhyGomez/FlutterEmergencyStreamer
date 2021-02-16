@@ -13,10 +13,9 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.0
-  firebase_core: ^0.7.0
-  firebase_auth: ^0.20.0+1
-  cloud_firestore: ^0.16.0
-  camera:
+  firebase_core: 
+  firebase_auth: 
+  camera: ^0.5.4+2
   camera_with_rtmp:
 
 dev_dependencies:
