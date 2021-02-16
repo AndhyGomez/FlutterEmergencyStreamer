@@ -1,3 +1,4 @@
+import 'package:EmergencyStreamer/screens/camera_init.dart';
 import 'package:EmergencyStreamer/screens/login_screen.dart';
 import 'package:EmergencyStreamer/screens/sign_up_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -8,6 +9,7 @@ import 'screens/main_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await initCameras();
   runApp(EmergencyStreamer());
 }
 
