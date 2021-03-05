@@ -2,10 +2,11 @@ import 'package:EmergencyStreamer/constants.dart';
 import 'package:flutter/material.dart';
 
 class SubmissionButton extends StatelessWidget {
-  SubmissionButton({this.onPress, @required this.label});
+  SubmissionButton({this.onPress, @required this.width, @required this.label});
 
   final Function onPress;
   final String label;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class SubmissionButton extends StatelessWidget {
         elevation: 5.0,
         child: MaterialButton(
           onPressed: onPress,
-          minWidth: 200.0,
+          minWidth: width,
           height: 42.0,
           child: Text(
             label,

@@ -2,7 +2,7 @@ import 'package:EmergencyStreamer/components/space_between.dart';
 import 'package:EmergencyStreamer/constants.dart';
 import 'package:EmergencyStreamer/components/text_entry.dart';
 import 'package:EmergencyStreamer/components/submission_buttons.dart';
-import 'package:EmergencyStreamer/screens/main_screen.dart';
+import 'package:EmergencyStreamer/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -48,6 +48,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 TextEntry(
                   hint: 'Your E-mail',
                   hide: false,
+                  actionable: true,
                   onChange: (value) {
                     inputEmail = value;
                   },
@@ -59,6 +60,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 TextEntry(
                   hint: 'Verify Email',
                   hide: false,
+                  actionable: true,
                   onChange: (value) {
                     inputEmailVerif = value;
                   },
@@ -70,6 +72,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 TextEntry(
                   hint: 'Your Password',
                   hide: true,
+                  actionable: true,
                   onChange: (value) {
                     inputPass = value;
                   },
@@ -81,6 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 TextEntry(
                   hint: 'Verify Password',
                   hide: true,
+                  actionable: true,
                   onChange: (value) {
                     inputPassVerif = value;
                   },
@@ -103,7 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           password: verifiedPass,
                         );
                         if (newUser != null) {
-                          Navigator.pushNamed(context, MainScreen.id);
+                          Navigator.pushNamed(context, SettingsScreen.id);
                           print('Account Created');
                         }
                       } catch (e) {
@@ -112,6 +116,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     }
                   },
                   label: 'Create Account',
+                  width: 200.0,
                 ),
               ],
             ),

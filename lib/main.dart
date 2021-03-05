@@ -1,5 +1,6 @@
 import 'package:EmergencyStreamer/screens/camera_init.dart';
 import 'package:EmergencyStreamer/screens/login_screen.dart';
+import 'package:EmergencyStreamer/screens/settings_screen.dart';
 import 'package:EmergencyStreamer/screens/sign_up_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class EmergencyStreamer extends StatelessWidget {
         LoginScreen.id: (context) => LoginScreen(),
         MainScreen.id: (contect) => MainScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        SettingsScreen.id: (context) => SettingsScreen(),
       },
     );
   }

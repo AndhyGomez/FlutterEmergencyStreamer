@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:EmergencyStreamer/screens/camera_init.dart';
+import 'package:EmergencyStreamer/screens/settings_screen.dart';
 import 'package:camera_with_rtmp/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -96,16 +97,17 @@ class _MainScreenState extends State<MainScreen> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
+        automaticallyImplyLeading: false,
         leading: null,
         actions: [
           IconButton(
             icon: Icon(
-              Icons.logout,
+              Icons.settings,
               color: kRedAccents,
             ),
             onPressed: () {
-              _auth.signOut();
-              Navigator.pop(context);
+              // _auth.signOut();
+              Navigator.pushNamed(context, SettingsScreen.id);
             },
           ),
         ],

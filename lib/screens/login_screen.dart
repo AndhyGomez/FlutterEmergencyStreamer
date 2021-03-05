@@ -47,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextEntry(
                   hint: 'Email',
                   hide: false,
+                  actionable: true,
                   onChange: (value) {
                     userEmail = value;
                   },
@@ -58,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextEntry(
                   hint: 'Password',
                   hide: true,
+                  actionable: true,
                   onChange: (value) {
                     userPass = value;
                   },
@@ -81,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                   },
                   label: 'Log In',
+                  width: 200.0,
                 ),
                 // Register text button,
                 TextButton(
