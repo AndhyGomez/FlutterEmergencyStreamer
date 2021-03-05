@@ -18,3 +18,5 @@ This app was created using the Flutter framework and the Dart programming langua
 <img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/SettingsScreen.PNG" width = 350 align = center>
 
 
+[![Status Report](https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/StatusReportThumb.PNG)](https://youtu.be/MnnjKdKhnAM)
+
