@@ -18,9 +18,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
   User loggedInUser;
   String userFN = 'First name';
   String userLN = 'Last name';
-  String contact1 = 'Contact 1';
-  String contact2 = 'Contact 2';
-  String contact3 = 'Contact 3';
+  String contact1 = 'Contact Email';
+  String contact2 = 'Contact Email';
+  String contact3 = 'Contact Email';
 
   @override
   void initState() {
