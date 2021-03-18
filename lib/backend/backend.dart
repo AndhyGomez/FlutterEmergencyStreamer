@@ -45,5 +45,7 @@ class BackEnd {
       "Contact2": contact2,
       "Contact3": contact3
     });
+
+    initializeLocalUser();
   }
 }
