@@ -24,8 +24,7 @@ class User {
           ],
           initalized: true);
       return temp;
-    } else {
-      return null;
     }
+    return User(contacts: [], fname: "", lname: "", initalized: false);
   }
 }

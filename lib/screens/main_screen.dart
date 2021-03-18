@@ -17,8 +17,9 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   bool isRecording = false;
+  String streamURL = "";
   CameraController cameraController = getCamera();
-  final User loggedInUser = BackEnd.getLocalUser();
+  User loggedInUser = BackEnd.getLocalUser();
   var _timer;
 
   Color _recordButtonColor = kRecordingInactive;
@@ -28,12 +29,13 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
   }
 
-  void _sendSMS(String message, List<String> recipents) async {
-    String _result = await sendSMS(message: message, recipients: recipents)
-        .catchError((onError) {
+  void _sendSMS(String message) async {
+    String _result =
+        await sendSMS(message: message, recipients: loggedInUser.contacts)
+            .catchError((onError) {
       print(onError);
     });
-    print(_result);
+    print("Result" + _result);
   }
 
   Future<String> startVideoStreaming() async {
@@ -55,7 +57,9 @@ class _MainScreenState extends State<MainScreen> {
         _timer = null;
       }
       var url = myUrl + BackEnd.getCurrentUserEmail();
-      print(url);
+      setState(() {
+        streamURL = url;
+      });
 
       await cameraController.startVideoStreaming(url,
           bitrate: 3225600, androidUseOpenGL: true);
@@ -136,8 +140,8 @@ class _MainScreenState extends State<MainScreen> {
                   } else {
                     startVideoStreaming();
                     _recordButtonColor = kRecordingActive;
-                    _sendSMS(
-                        "Watch me at: " + streamUrl, loggedInUser.contacts);
+                    loggedInUser = BackEnd.getLocalUser();
+                    _sendSMS("Watch me at: " + streamURL);
                   }
                   isRecording = !isRecording;
                 });
