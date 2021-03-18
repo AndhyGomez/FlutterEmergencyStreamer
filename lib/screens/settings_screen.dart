@@ -1,9 +1,11 @@
+import 'package:EmergencyStreamer/backend/User.dart';
+import 'package:EmergencyStreamer/backend/backend.dart';
 import 'package:EmergencyStreamer/components/space_between.dart';
 import 'package:EmergencyStreamer/components/submission_buttons.dart';
 import 'package:EmergencyStreamer/components/text_entry.dart';
 import 'package:EmergencyStreamer/constants.dart';
 import 'package:EmergencyStreamer/screens/login_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:EmergencyStreamer/screens/main_screen.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -14,30 +16,26 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  final _auth = FirebaseAuth.instance;
   User loggedInUser;
+  String currentUserId;
   String userFN = 'First name';
   String userLN = 'Last name';
-  String contact1 = 'Contact Email';
-  String contact2 = 'Contact Email';
-  String contact3 = 'Contact Email';
+  String contact1 = 'Contact Phone';
+  String contact2 = 'Contact Phone';
+  String contact3 = 'Contact Phone';
 
   @override
   void initState() {
     super.initState();
-
-    getCurrentUser();
-  }
-
-  void getCurrentUser() async {
-    try {
-      final user = _auth.currentUser;
-      if (user != null) {
-        loggedInUser = user;
-        print(loggedInUser.email);
-      }
-    } catch (e) {
-      print(e);
+    setState(() {
+      loggedInUser = BackEnd.getLocalUser();
+    });
+    if (loggedInUser.initalized) {
+      userFN = loggedInUser.fname;
+      userLN = loggedInUser.lname;
+      contact1 = loggedInUser.contacts[0];
+      contact2 = loggedInUser.contacts[1];
+      contact3 = loggedInUser.contacts[2];
     }
   }
 
@@ -63,7 +61,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 // Display Email
                 TextEntry(
-                  hint: loggedInUser.email,
+                  hint: BackEnd.getCurrentUserEmail(),
                   hide: false,
                   actionable: false,
                 ),
@@ -76,7 +74,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   hide: false,
                   actionable: true,
                   onChange: (value) {
-                    userFN = value;
+                    setState(() {
+                      userFN = value;
+                    });
                   },
                 ),
                 SpaceBetween(
@@ -88,7 +88,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   hide: false,
                   actionable: true,
                   onChange: (value) {
-                    userFN = value;
+                    setState(() {
+                      userLN = value;
+                    });
                   },
                 ),
                 SpaceBetween(
@@ -112,7 +114,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   hide: false,
                   actionable: true,
                   onChange: (value) {
-                    contact1 = value;
+                    setState(() {
+                      contact1 = value;
+                    });
                   },
                 ),
                 SpaceBetween(
@@ -123,7 +127,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   hide: false,
                   actionable: true,
                   onChange: (value) {
-                    contact2 = value;
+                    setState(() {
+                      contact2 = value;
+                    });
                   },
                 ),
                 SpaceBetween(
@@ -134,7 +140,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   hide: false,
                   actionable: true,
                   onChange: (value) {
-                    contact3 = value;
+                    setState(() {
+                      contact3 = value;
+                    });
                   },
                 ),
                 // Sign out and Save Buttons
@@ -143,7 +151,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   children: [
                     SubmissionButton(
                       onPress: () {
-                        _auth.signOut();
+                        BackEnd.signOut();
                         Navigator.popAndPushNamed(context, LoginScreen.id);
                       },
                       label: 'Sign Out',
@@ -154,8 +162,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     SubmissionButton(
                       onPress: () {
-                        // TODO: research ways to store data to maintain persistence with firebase
-                        Navigator.pop(context);
+                        BackEnd.updateUserSettings(
+                            userFN, userLN, contact1, contact2, contact3);
+                        Navigator.popAndPushNamed(context, MainScreen.id);
                       },
                       label: 'Save',
                       width: 150.0,

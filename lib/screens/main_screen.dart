@@ -1,10 +1,12 @@
 import 'dart:async';
+import 'package:EmergencyStreamer/backend/User.dart';
+import 'package:EmergencyStreamer/backend/backend.dart';
 import 'package:EmergencyStreamer/screens/camera_init.dart';
 import 'package:EmergencyStreamer/screens/settings_screen.dart';
 import 'package:camera_with_rtmp/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:EmergencyStreamer/constants.dart';
+import 'package:flutter_sms/flutter_sms.dart';
 
 class MainScreen extends StatefulWidget {
   static final String id = 'mainScreen';
@@ -14,10 +16,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  final _auth = FirebaseAuth.instance;
-  User loggedInUser;
   bool isRecording = false;
   CameraController cameraController = getCamera();
+  final User loggedInUser = BackEnd.getLocalUser();
   var _timer;
 
   Color _recordButtonColor = kRecordingInactive;
@@ -25,20 +26,14 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
-
-    getCurrentUser();
   }
 
-  void getCurrentUser() async {
-    try {
-      final user = _auth.currentUser;
-      if (user != null) {
-        loggedInUser = user;
-        print(loggedInUser.email);
-      }
-    } catch (e) {
-      print(e);
-    }
+  void _sendSMS(String message, List<String> recipents) async {
+    String _result = await sendSMS(message: message, recipients: recipents)
+        .catchError((onError) {
+      print(onError);
+    });
+    print(_result);
   }
 
   Future<String> startVideoStreaming() async {
@@ -59,7 +54,7 @@ class _MainScreenState extends State<MainScreen> {
         _timer.cancel();
         _timer = null;
       }
-      var url = myUrl + loggedInUser.email;
+      var url = myUrl + BackEnd.getCurrentUserEmail();
       print(url);
 
       await cameraController.startVideoStreaming(url,
@@ -141,6 +136,7 @@ class _MainScreenState extends State<MainScreen> {
                   } else {
                     startVideoStreaming();
                     _recordButtonColor = kRecordingActive;
+                    _sendSMS("Testing", loggedInUser.contacts);
                   }
                   isRecording = !isRecording;
                 });

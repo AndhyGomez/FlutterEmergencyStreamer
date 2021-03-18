@@ -1,10 +1,10 @@
+import 'package:EmergencyStreamer/backend/backend.dart';
 import 'package:EmergencyStreamer/components/space_between.dart';
 import 'package:EmergencyStreamer/constants.dart';
 import 'package:EmergencyStreamer/components/text_entry.dart';
 import 'package:EmergencyStreamer/components/submission_buttons.dart';
 import 'package:EmergencyStreamer/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpScreen extends StatefulWidget {
   static final String id = 'signUpScreen';
@@ -14,8 +14,6 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final _auth = FirebaseAuth.instance;
-
   String inputEmail;
   String inputEmailVerif;
   String inputPass;
@@ -102,10 +100,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                       try {
                         final newUser =
-                            await _auth.createUserWithEmailAndPassword(
-                          email: verifiedEmail,
-                          password: verifiedPass,
-                        );
+                            BackEnd.register(verifiedEmail, verifiedPass);
                         if (newUser != null) {
                           Navigator.pushNamed(context, SettingsScreen.id);
                           print('Account Created');
