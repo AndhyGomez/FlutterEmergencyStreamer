@@ -136,7 +136,8 @@ class _MainScreenState extends State<MainScreen> {
                   } else {
                     startVideoStreaming();
                     _recordButtonColor = kRecordingActive;
-                    _sendSMS("Testing", loggedInUser.contacts);
+                    _sendSMS(
+                        "Watch me at: " + streamUrl, loggedInUser.contacts);
                   }
                   isRecording = !isRecording;
                 });
