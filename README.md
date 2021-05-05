@@ -8,14 +8,14 @@ We live in a society wherein we might find ourselves in grave danger from one mo
 This app was created using the Flutter framework and the Dart programming language and is fully operational on both IOS and Android.
 
 ## UI Demo
-<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/LoginScreen.png" width = 350 align = left>
-<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/RegistrationScreen.png" width = 350 align = right>
+<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/assets/LoginScreen.png" width = 350 align = left>
+<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/assets/RegistrationScreen.png" width = 350 align = right>
 
 
-<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/MainScreenInactive.PNG" width = 350 align = left>
-<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/MainScreenActive.PNG" width = 350 align = right>
+<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/assets/MainScreenInactive.PNG" width = 350 align = left>
+<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/assets/MainScreenActive.PNG" width = 350 align = right>
 
-<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/SettingsScreen.PNG" width = 350 align = center>
+<img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/assets/SettingsScreen.PNG" width = 350 align = center>
 
 ## Features
  * Video streaming
