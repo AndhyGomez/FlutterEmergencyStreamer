@@ -27,4 +27,4 @@ This app was created using the Flutter framework and the Dart programming langua
 
 **Professor:** Dr. Sean Mondesire
 
-## License
+Copyright (c) 2021 STU CS Department
