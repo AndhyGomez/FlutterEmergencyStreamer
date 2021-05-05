@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles main screen along with recording, streaming once user is signed in + authenticated
+*/
+
 import 'dart:async';
 import 'package:EmergencyStreamer/backend/User.dart';
 import 'package:EmergencyStreamer/backend/backend.dart';
@@ -29,6 +35,7 @@ class _MainScreenState extends State<MainScreen> {
     super.initState();
   }
 
+  // Sends sms to recipients list which is stored in user acc settings
   void _sendSMS(String message) async {
     String _result =
         await sendSMS(message: message, recipients: loggedInUser.contacts)
@@ -38,6 +45,7 @@ class _MainScreenState extends State<MainScreen> {
     print("Result" + _result);
   }
 
+  // method to start streams
   Future<String> startVideoStreaming() async {
     if (!cameraController.value.isInitialized) {
       //showInSnackBar('Error: select a camera first.');
@@ -56,11 +64,12 @@ class _MainScreenState extends State<MainScreen> {
         _timer.cancel();
         _timer = null;
       }
+      // Generate custom user URL
       var url = myUrl + BackEnd.getCurrentUserEmail();
       setState(() {
         streamURL = url;
       });
-
+      // Checks if camera is available for recording and sets bitrate
       await cameraController.startVideoStreaming(url,
           bitrate: 3225600, androidUseOpenGL: true);
       _timer = Timer.periodic(Duration(seconds: 1), (timer) async {});
@@ -72,6 +81,7 @@ class _MainScreenState extends State<MainScreen> {
     return streamUrl;
   }
 
+  // Method to stop video stream
   Future<void> stopVideoStreaming() async {
     if (!cameraController.value.isStreamingVideoRtmp) {
       return null;
@@ -90,6 +100,7 @@ class _MainScreenState extends State<MainScreen> {
     }
   }
 
+  // Widget tree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,7 +116,7 @@ class _MainScreenState extends State<MainScreen> {
               color: kRedAccents,
             ),
             onPressed: () {
-              // _auth.signOut();
+              // Sends to settings screen
               Navigator.pushNamed(context, SettingsScreen.id);
             },
           ),
@@ -119,7 +130,7 @@ class _MainScreenState extends State<MainScreen> {
             Align(
               alignment: Alignment.bottomCenter,
             ),
-            isRecording
+            isRecording // Determines state of stream
                 ? Container(
                     height: 0,
                     child: AspectRatio(

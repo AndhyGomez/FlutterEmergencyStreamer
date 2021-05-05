@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles camera usage/functionalities along with initialization
+*/
+
 import 'package:camera_with_rtmp/camera.dart';
 
 CameraController _controller;

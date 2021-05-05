@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class holds customized buttons used across the app
+*/
+
 import 'package:EmergencyStreamer/constants.dart';
 import 'package:flutter/material.dart';
 

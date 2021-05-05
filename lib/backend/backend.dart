@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles all backend entities and firebase connections
+*/
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:EmergencyStreamer/backend/User.dart' as Local;

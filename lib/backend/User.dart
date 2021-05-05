@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles users and user data 
+*/
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class User {

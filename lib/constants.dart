@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class holds constants used throughout the app for easy access and modification
+*/
+
 import 'package:flutter/material.dart';
 
 // Colors
@@ -13,4 +19,4 @@ const kSpaceBetweenSubmission = 24.0;
 
 const kBorderRadius = 32.0;
 
-const streamUrl = "rtmp://3.87.52.170/live/";
+const streamUrl = "rtmp://172.31.57.23/live/";

@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles login and authentication
+*/
+
 import 'package:EmergencyStreamer/backend/backend.dart';
 import 'package:EmergencyStreamer/components/submission_buttons.dart';
 import 'package:EmergencyStreamer/components/space_between.dart';
@@ -67,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 // Log in Button,
                 SubmissionButton(
+                  // asynchronous method to await backend auth from firebase
                   onPress: () async {
                     try {
                       final user = BackEnd.signIn(userEmail, userPass);

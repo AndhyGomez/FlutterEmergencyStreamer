@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles screen routing/navigation
+*/
+
 import 'package:EmergencyStreamer/screens/camera_init.dart';
 import 'package:EmergencyStreamer/screens/login_screen.dart';
 import 'package:EmergencyStreamer/screens/settings_screen.dart';

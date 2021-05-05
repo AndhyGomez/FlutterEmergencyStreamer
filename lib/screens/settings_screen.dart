@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles user settings and firestore connections to save and modify user information
+*/
+
 import 'package:EmergencyStreamer/backend/User.dart';
 import 'package:EmergencyStreamer/backend/backend.dart';
 import 'package:EmergencyStreamer/components/space_between.dart';
@@ -30,6 +36,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     setState(() {
       loggedInUser = BackEnd.getLocalUser();
     });
+    // Pull firestore collections
     if (loggedInUser.initalized) {
       userFN = loggedInUser.fname;
       userLN = loggedInUser.lname;
@@ -75,6 +82,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   actionable: true,
                   onChange: (value) {
                     setState(() {
+                      // Sets new state foir first name variable
                       userFN = value;
                     });
                   },
@@ -89,6 +97,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   actionable: true,
                   onChange: (value) {
                     setState(() {
+                      // Sets new state for last name variable
                       userLN = value;
                     });
                   },
@@ -115,6 +124,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   actionable: true,
                   onChange: (value) {
                     setState(() {
+                      // Sets state for first emergency contact
                       contact1 = value;
                     });
                   },
@@ -128,6 +138,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   actionable: true,
                   onChange: (value) {
                     setState(() {
+                      // Sets state for second emergency contact
                       contact2 = value;
                     });
                   },
@@ -141,6 +152,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   actionable: true,
                   onChange: (value) {
                     setState(() {
+                      // Sets state for third emergency contact
                       contact3 = value;
                     });
                   },
@@ -151,6 +163,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   children: [
                     SubmissionButton(
                       onPress: () {
+                        // Handles user sign out
                         BackEnd.signOut();
                         Navigator.popAndPushNamed(context, LoginScreen.id);
                       },
@@ -162,6 +175,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     SubmissionButton(
                       onPress: () {
+                        // Updates any changes made in app to firestore collection
                         BackEnd.updateUserSettings(
                             userFN, userLN, contact1, contact2, contact3);
                         Navigator.popAndPushNamed(context, MainScreen.id);

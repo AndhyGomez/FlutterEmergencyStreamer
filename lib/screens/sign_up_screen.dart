@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class handles user sign on authentication - first screen on app
+*/
+
 import 'package:EmergencyStreamer/backend/backend.dart';
 import 'package:EmergencyStreamer/components/space_between.dart';
 import 'package:EmergencyStreamer/constants.dart';
@@ -92,6 +98,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Create Account
                 SubmissionButton(
+                  // Checks credentials
                   onPress: () async {
                     if (inputEmail == inputEmailVerif &&
                         inputPass == inputPassVerif) {

@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class holds custom spacing component used throughout app screens
+*/
+
 import 'package:flutter/material.dart';
 
 class SpaceBetween extends StatelessWidget {

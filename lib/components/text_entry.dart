@@ -1,3 +1,9 @@
+/*
+Copyright 2021 STU Computer Science
+
+Class holds customized text entry widget used across app
+*/
+
 import 'package:flutter/material.dart';
 import 'package:EmergencyStreamer/constants.dart';
 
