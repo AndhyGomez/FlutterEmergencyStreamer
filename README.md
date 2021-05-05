@@ -22,6 +22,11 @@ This app was created using the Flutter framework and the Dart programming langua
  * Emergency Contacts
  * SMS to saved contacts
 
+## Acknowledgements 
+Packages used within the app:
+ * [Camera_with_rtmp](https://pub.dev/packages/camera_with_rtmp "RTMP Camera")
+ * [Flutter_sms](https://pub.dev/packages/flutter_sms "SMS")
+
 ## Credits
 **Engineers:** STU © Andhy Gomez, STU © Carlos Aybar De Los Santos, STU © Jared Sullin
 
