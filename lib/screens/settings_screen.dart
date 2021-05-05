@@ -62,7 +62,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Container(
                   height: 200.0,
                   child: Image.asset(
-                    'images/emergencystreamer.png',
+                    'assets/emergencystreamer.png',
                     fit: BoxFit.fitWidth,
                   ),
                 ),

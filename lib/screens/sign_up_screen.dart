@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   height: 250.0,
                   child: Image.asset(
-                    'images/emergencystreamer.png',
+                    'assets/emergencystreamer.png',
                     fit: BoxFit.fitWidth,
                   ),
                 ),

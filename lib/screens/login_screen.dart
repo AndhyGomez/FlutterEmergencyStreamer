@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Container(
                   height: 250.0,
                   child: Image.asset(
-                    'images/emergencystreamer.png',
+                    'assets/emergencystreamer.png',
                     fit: BoxFit.fitWidth,
                   ),
                 ),
