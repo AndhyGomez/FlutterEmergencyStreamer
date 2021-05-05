@@ -1,5 +1,5 @@
 # Emergency Streamer
-An app that will provide a discrete method of recording and streaming a live video feed to a server when needed.
+An app that will provide a discrete method of recording and streaming a live video feed in potentially dangerous situations
  
 ## Motivation
 We live in a society wherein we might find ourselves in grave danger from one moment to the next. While leading our normal lives a regular day could take a turn for the worst, not only because of the many dangerous criminals that could hurt us, but also because of the people in positions of power that try to abuse us with no consequences.This app seeks to give people the ability to record secretly and safely while in a dangerous or abusive situation. 
@@ -17,6 +17,14 @@ This app was created using the Flutter framework and the Dart programming langua
 
 <img src="https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/SettingsScreen.PNG" width = 350 align = center>
 
+## Features
+ * Video streaming
+ * Emergency Contacts
+ * SMS to saved contacts
 
-[![Status Report](https://raw.githubusercontent.com/AndhyGomez/FlutterEmergencyStreamer/main/images/StatusReportThumb.PNG)](https://youtu.be/MnnjKdKhnAM)
+## Credits
+**Engineers:** STU © Andhy Gomez, STU © Carlos Aybar De Los Santos, STU © Jared Sullin
 
+**Professor:** Dr. Sean Mondesire
+
+© 2021 STU Computer Science
