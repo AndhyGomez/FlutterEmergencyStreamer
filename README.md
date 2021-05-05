@@ -24,6 +24,7 @@ This app was created using the Flutter framework and the Dart programming langua
 
 ## Credits
 **Engineers:** STU © Andhy Gomez, STU © Carlos Aybar De Los Santos, STU © Jared Sullin
+
 **Professor:** Dr. Sean Mondesire
 
 ## License
