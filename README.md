@@ -28,7 +28,7 @@ This app was created using the Flutter framework and the Dart programming langua
  1. Copy the url of the Github project
  2. Click check out project from version control and select Git.
  3. Paste the URL of your project and select the desired directory location for your project. Then click clone button.
- --*Click the No button.
+     * Click the No button.
  4. Choose the existing project because it has been downloaded to the location you created. After finding the location, click OK.
  5. When the project is open in android studio, you will get some errors. DON’T PANIC !!!. Click Get dependencies to install the packages.
  6. Boom…!!!! You are done with installing the packages, the errors are corrected and you can start your project, or check the code. 
